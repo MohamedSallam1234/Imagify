@@ -19,9 +19,7 @@ const registerUser = async (req, res) => {
     const newUser = new userModel(userData);
     const user = await newUser.save();
 
-    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
-      expiresIn: 3600,
-    });
+    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET);
     res.json({
       statusCode: 200,
       message: "User registered successfully",
@@ -46,9 +44,7 @@ const loginUser = async (req, res) => {
     if (!isPasswordMatch) {
       return res.json({ statusCode: 400, message: "Invalid credentials" });
     } else {
-      const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
-        expiresIn: 3600,
-      });
+      const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET);
       res.json({
         statusCode: 200,
         message: "User logged in successfully",
