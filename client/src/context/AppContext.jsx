@@ -32,7 +32,7 @@ const AppContextProvider = (props) => {
 
   const generateImage = async (prompt) => {
     try {
-      const data = await axios.post(
+      const { data } = await axios.post(
         `${backendUrl}/api/image/generate-image`,
         { prompt },
         {
@@ -43,16 +43,18 @@ const AppContextProvider = (props) => {
       );
       if (data.statusCode === 200) {
         loadCreditsData();
-        return data.resultImage;
+        return data.image;
       } else {
         toast.error(data.message);
         loadCreditsData();
-      }
-      if (data.creditBalance === 0) {
-        navigate("/buy");
+        // if (data.creditBalance === 0) {
+        //   navigate("/buy");
+        // }
       }
     } catch (error) {
-      toast.error(error.message);
+      console.log(error);
+      navigate("/buy");
+      toast.error("Insufficient credits");
     }
   };
 
