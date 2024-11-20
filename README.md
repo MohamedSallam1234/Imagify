@@ -1,6 +1,6 @@
 # Imagify - AI Text to Image Generator
 
-Imagify is a full-stack web application that allows users to generate images from text prompts using AI technology. Users can manage their credits, purchase more if needed, and enjoy a seamless experience with responsive design and animations.
+Imagify is a full-stack web application that allows users to generate images from text prompts using AI technology. Users can manage their credits, purchase more if needed, and enjoy a seamless experience with responsive design.
 
 ## Table of Contents
 
@@ -20,14 +20,13 @@ Imagify is a full-stack web application that allows users to generate images fro
 - **Image Generation**: Generate images from text prompts using the ClipDrop API.
 - **Credit System**: Manage credits for image generation; purchase additional credits when needed.
 - **Responsive Design**: Built with React and Tailwind CSS for optimal viewing on all devices.
-- **Animations**: Enhanced user experience with Framer Motion animations.
 - **Toast Notifications**: Real-time feedback using `react-toastify` for success and error messages.
 - **Global State Management**: Utilizes React Context API for managing user state and application-wide data.
 
 ## Demo
 
 ### Home Page 
-![Home Page](Imagify-home.png)
+![Home Page](imagify-home.png)
 
 ### Generate Page 
 ![Generate Page](Imagify-generate.png)
@@ -162,7 +161,8 @@ Imagify is a full-stack web application that allows users to generate images fro
 - React
 - Tailwind CSS
 - React Router DOM
-- Framer Motion
+- Context API
+- Axios
 - React Toastify
 - Axios
 
